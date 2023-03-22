@@ -24,6 +24,17 @@ def menu():  #creates print menu
     """)
 
 
+def decode(password):
+    decoded_password = ""
+    for char in password:
+        num = int(char)
+        num -= 3
+        if num < 0:
+            num += 10
+        decoded_password += str(num)
+    return decoded_password
+
+
 def main():  #run program
     option = 0
     userPass = ''
@@ -35,7 +46,7 @@ def main():  #run program
             print("Your password has been encoded and stored!")
             userPass = encode(userPass)
         if option == 2:
-            print(f"The encoded password is {userPass} and the original password is ")
+            print(f"The encoded password is {userPass} and the original password is " + decode(userPass))
 
 
 if __name__ == '__main__':  #make code work
