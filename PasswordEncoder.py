@@ -39,13 +39,13 @@ def main():  #run program
     option = 0
     userPass = ''
     while option != 3:
-        main()
+        menu()
         option = int(input("Please enter an option: "))
         if option == 1:
             userPass = input("Please enter a password to encode: ")
             print("Your password has been encoded and stored!")
             userPass = encode(userPass)
-        if option == 2:
+        elif option == 2:
             print(f"The encoded password is {userPass} and the original password is " + decode(userPass))
 
 
